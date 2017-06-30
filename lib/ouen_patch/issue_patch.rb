@@ -1,7 +1,7 @@
 require_dependency 'issue'
 
 class Issue < ActiveRecord::Base
-  has_one :ouen, :foreign_key => 'content_id', :conditions => ["content_type = ?", 'Issue'], :dependent => :destroy
+  has_one :ouen, -> { where("content_type = ?", 'Issue') }, :foreign_key => 'content_id', :dependent => :destroy
 
   # "応援！"
   def ouen_good

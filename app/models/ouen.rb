@@ -56,8 +56,8 @@ class Ouen < ActiveRecord::Base
 
   # カウント数の再計算
   def recount
-    self.good_count = self.ouen_users.count(:conditions => ["good = ?", true])
-    self.more_count = self.ouen_users.count(:conditions => ["good = ?", false])
+    self.good_count = self.ouen_users.where(good: true).count
+    self.more_count = self.ouen_users.where(good: false).count
   end
 
   # カウント数を再計算して保存
