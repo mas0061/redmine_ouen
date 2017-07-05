@@ -1,6 +1,6 @@
 <%# "応援！"と"頑張れ"のカウントを表示する %>
-<div class="splitcontent contextual" style="display: flex;">
-  <div class="ouen_good" style="padding-right: 1em;"><%= l(:field_ouen_good) -%>
+<div style="text-align: right;font-size: 0.9em">
+  <span class="ouen_good" style="padding-right: 1em;"><%= l(:field_ouen_good) -%>
     <%- if User.current.logged? -%>
       <%= link_to(issue.ouen_good.count,
             {:controller => 'ouens', :action => 'good', :content_type => 'issue', :content_id => issue.id},
@@ -8,8 +8,8 @@
     <%- else -%>
       <%= issue.ouen_good.count -%>
     <%- end -%>
-  </div>
-  <div class="ouen_more"><%= l(:field_ouen_more) -%>
+  </span>
+  <span class="ouen_more"><%= l(:field_ouen_more) -%>
     <%- if User.current.logged? -%>
       <%= link_to(issue.ouen_more.count,
             {:controller => 'ouens', :action => 'more', :content_type => 'issue', :content_id => issue.id},
@@ -17,5 +17,5 @@
     <%- else -%>
       <%= issue.ouen_more.count -%>
     <%- end -%>
-  </div>
+  </span>
 </div>
