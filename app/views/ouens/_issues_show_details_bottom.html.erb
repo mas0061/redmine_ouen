@@ -1,6 +1,8 @@
+<%= stylesheet_link_tag 'redmine_ouen_styles.css', :plugin => 'redmine_ouen', :media => 'all' %>
+
 <%# "応援！"と"頑張れ"のカウントを表示する %>
-<div style="text-align: right;font-size: 0.9em">
-  <span class="ouen_good" style="padding-right: 1em;"><%= l(:field_ouen_good) -%>
+<div id="redmine_ouen_box">
+  <span class="ouen_good"><%= l(:field_ouen_good) -%>
     <%- if User.current.logged? -%>
       <%= link_to(issue.ouen_good.count,
             {:controller => 'ouens', :action => 'good', :content_type => 'issue', :content_id => issue.id},
