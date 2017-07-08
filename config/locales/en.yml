@@ -6,3 +6,6 @@ en:
 
   text_ouen_good_post: 'Post to "Good"?'
   text_ouen_more_post: 'Post to "More"?'
+
+  flash_ouen_ok: '%{ouen_kind} done'
+  flash_ouen_ng: 'already done %{ouen_kind}'

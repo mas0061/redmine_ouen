@@ -5,9 +5,9 @@ class OuensController < ApplicationController
   def good
     if request.post? && params[:content_type] && params[:content_id]
       if Ouen.plus_good(User.current, params[:content_type], params[:content_id])
-        flash[:notice] = 'ok'
+        flash[:notice] = I18n.t('flash_ouen_ok', ouen_kind: I18n.t('field_ouen_good'))
       else
-        flash[:warning] = 'duplicated.'
+        flash[:warning] = I18n.t('flash_ouen_ng', ouen_kind: I18n.t('field_ouen_good'))
       end
     end
 
@@ -19,9 +19,9 @@ class OuensController < ApplicationController
   def more
     if request.post? && params[:content_type] && params[:content_id]
       if Ouen.plus_more(User.current, params[:content_type], params[:content_id])
-        flash[:notice] = 'ok'
+        flash[:notice] = I18n.t('flash_ouen_ok', ouen_kind: I18n.t('field_ouen_more'))
       else
-        flash[:warning] = 'duplicated.'
+        flash[:warning] = I18n.t('flash_ouen_ng', ouen_kind: I18n.t('field_ouen_more'))
       end
     end
 

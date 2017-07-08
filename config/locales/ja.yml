@@ -7,3 +7,6 @@ ja:
 
   text_ouen_good_post: '"応援！"しますか？'
   text_ouen_more_post: '"頑張れ"しますか？'
+
+  flash_ouen_ok: '%{ouen_kind} しました'
+  flash_ouen_ng: 'もう %{ouen_kind} しています'
